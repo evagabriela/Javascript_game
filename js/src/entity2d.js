@@ -11,6 +11,10 @@ game.entity2d = function(spec) {
     var sprite = spec.sprite;
 
     that.update = function() {
+        if (position.getX() > 800) {
+            console.log("position greater than 800");
+            velocity.setX(-4);
+        }
         velocity.add(acceleration);
         position.add(velocity);
     };
